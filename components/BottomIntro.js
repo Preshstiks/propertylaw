@@ -1,6 +1,8 @@
+import { BottomIntroData } from "@/data/bottomIntroData";
+
 const BottomIntro = () => {
   return (
-    <div className="px-[12%] py-[50px] bg-[#000033] text-white">
+    <div className="px-[12%] py-[100px] rounded-ee-[70px] rounded-se-[70px] bg-[#000033] text-white">
       <div className="flex items-center justify-between">
         <div className="w-[100%]">
           <div>
@@ -23,6 +25,23 @@ const BottomIntro = () => {
             navigating the complexities of property law successfully.
           </p>
         </div>
+      </div>
+      <div className="flex items-center pt-[100px] gap-7">
+        {BottomIntroData.map((items) => (
+          <div className="relative" key={items.num}>
+            <div className="absolute z-0 top-[-97px] left-2 font-medium text-[#22224b] text-[100px]">
+              {items.num}
+            </div>
+            <div className="relative z-40 pb-[40px]">
+              <h2 className="text-lg ">{items.title}</h2>
+            </div>
+            <div>
+              <p className="text-gray-400 text-sm font-light">
+                {items.description}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
