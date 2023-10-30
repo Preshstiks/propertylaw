@@ -9,7 +9,7 @@ const Navbar = () => {
         </div>
         <div>
           <h1 className="text-[25px] font-russo">Agbolagade Akande</h1>
-          <h2 className="font-russo"> & CO</h2>
+          <h2 className="font-russo"> & Co.</h2>
         </div>
       </div>
       <div className="flex gap-7">

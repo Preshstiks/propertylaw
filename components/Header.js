@@ -20,10 +20,10 @@ const Header = () => {
         </div>
       </div>
       <div className="flex gap-6">
-        <button className="py-4 px-5 text-[#000033] rounded-lg text-sm font-bold bg-[#C4A747]">
+        <button className="py-4 px-5 text-[#000033] rounded-lg text-sm font-bold bg-[#CAA839]">
           Consultation
         </button>
-        <button className="py-4 px-5 bg-[#22224b] rounded-lg text-sm font-bold text-[#C4A747]">
+        <button className="py-4 px-5 bg-[#22224b] rounded-lg text-sm font-bold text-[#CAA839]">
           Our Services
         </button>
       </div>
