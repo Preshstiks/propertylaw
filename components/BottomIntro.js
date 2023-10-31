@@ -26,7 +26,7 @@ const BottomIntro = () => {
           </p>
         </div>
       </div>
-      <div className="flex items-center pt-[100px] gap-7">
+      <div className="flex pt-[100px] gap-7">
         {BottomIntroData.map((items) => (
           <div className="relative" key={items.num}>
             <div className="absolute z-0 top-[-97px] left-2 font-medium text-[#22224b] text-[100px]">
