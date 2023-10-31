@@ -2,6 +2,7 @@ import BottomIntro from "@/components/BottomIntro";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import Services from "@/components/Services";
+import Teams from "@/components/Teams";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       </div>
       <Services />
       <BottomIntro />
+      <Teams />
     </div>
   );
 }
