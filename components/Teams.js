@@ -14,11 +14,11 @@ const Teams = () => {
           investments.
         </p> */}
       </div>
-      <div className="w-full relative">
+      <div className="w-full pb-[100px] relative">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="absolute bottom-0"
-          viewBox="0 0 1200 320"
+          viewBox="0 0 900 320"
         >
           <path
             fill="#bbdefb"
@@ -40,13 +40,13 @@ const Teams = () => {
                 height={2000}
               />
 
-              <div>
+              <div className="py-3">
                 <h2 className="font-medium text-center tracking-[3px] text-[#000033]">
                   OWEN L ANDERSON
                 </h2>
               </div>
               <div className="w-1/2 text-center mx-auto">
-                <span className="text-gray-600 text-sm font-light">
+                <span className="text-gray-600 text-sm font-light leading-[30px]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </span>
@@ -63,13 +63,13 @@ const Teams = () => {
               }}
               height={2000}
             />
-            <div className="text-center">
+            <div className="text-center py-3">
               <h2 className="font-medium tracking-[3px] text-[#000033]">
                 PATRICIA I HANSEN
               </h2>
             </div>
             <div className="w-1/2 text-center mx-auto">
-              <span className="text-gray-600 text-sm font-light">
+              <span className="text-gray-600 text-sm font-light leading-[30px]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </span>
