@@ -88,15 +88,18 @@ const Services = () => {
         <h1 className="text-[35px]">Legal Services</h1>
         <div className="bg-[#CAA839] h-1 w-[50px] mx-auto rounded-full my-[20px]"></div>
       </div>
-      <div className=" px-[9%]">
+      <div className="px-[9%]">
         <div ref={emblaRef} className="overflow-hidden">
-          <div className="flex">
+          <div className="flex py-10">
             {OurServices.map((items) => (
               <div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="p-8 mx-[20px] flex-grow-0 flex-shrink-0 xmd:basis-[29.5%] sm:basis-[60%] basis-[60%] rounded-lg shadow-md bg-white"
+                style={{
+                  boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+                }}
+                className="p-8 mx-[10px] flex-grow-0 flex-shrink-0 xmd:basis-[29.5%] sm:basis-[60%] basis-[95%] rounded-lg shadow-md bg-white"
               >
                 <div className="pb-2 flex items-center justify-center">
                   <div className="w-[80px] bg-[#0A0A22] h-[80px] rounded-lg flex items-center justify-center">

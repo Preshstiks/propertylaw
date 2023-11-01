@@ -1,5 +1,5 @@
 import Image from "next/image";
-const Header = () => {
+const Header = ({ openModal }) => {
   return (
     <div className="pb-[50px]">
       <div className="md:flex block justify-between space-x-[40px] items-center max-w-screen-[2825px]">
@@ -22,11 +22,11 @@ const Header = () => {
         </div>
       </div>
       <div className="flex md:pt-0 xxl:mt-0 mt-[20px] gap-6">
-        <button className="sm:py-4 sm:px-5 py-3 px-4 text-[#0A0A22] rounded-lg xsm:text-sm text-xs font-bold bg-[#CAA839]">
+        <button
+          onClick={openModal}
+          className="sm:py-4 sm:px-5 py-3 px-4 text-[#0A0A22] hover:bg-[#22224b] hover:text-[#CAA839] rounded-lg xsm:text-sm text-xs font-bold bg-[#CAA839]"
+        >
           Consultation
-        </button>
-        <button className="sm:py-4 sm:px-5 py-3 px-4 bg-[#22224b] rounded-lg xsm:text-sm text-xs font-bold text-[#CAA839]">
-          Our Services
         </button>
       </div>
     </div>

@@ -4,8 +4,8 @@ import { Link as ScrollLink } from "react-scroll";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
-const Navbar = () => {
+import { useEffect, useRef, useState } from "react";
+const Navbar = ({ openModal }) => {
   const routes = [
     {
       link: "services",
@@ -17,8 +17,31 @@ const Navbar = () => {
     },
   ];
   const [show, setShow] = useState(false);
+  const navbarRef = useRef(null); // Create a ref for the Navbar container
+
+  // Add event listener to handle clicks outside the Navbar
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        setShow(false);
+      }
+    };
+
+    // Attach the event listener when the component mounts
+    if (show) {
+      window.addEventListener("click", handleClickOutside);
+    }
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, [show]);
   return (
-    <div className="px-[12%] py-[20px] bg-[#0A0A22] text-white">
+    <div
+      ref={navbarRef}
+      className="px-[12%] py-[20px] sticky top-0 z-50 bg-[#0A0A22] text-white"
+    >
       <div className="flex justify-between items-center">
         <Link href="/" className="flex items-center">
           <div>
@@ -66,13 +89,12 @@ const Navbar = () => {
                 </div>
               ))}
               <div>
-                <Link
-                  onClick={() => setShow(false)}
+                <div
+                  onClick={openModal}
                   className="font-medium hover:text-[#CAA839] text-sm"
-                  href="/contact"
                 >
                   Contact Us
-                </Link>
+                </div>
               </div>
               <AiOutlineClose
                 onClick={() => setShow(false)}
@@ -95,12 +117,12 @@ const Navbar = () => {
           ))}
 
           <div>
-            <Link
-              className="font-medium hover:text-[#CAA839] text-sm"
-              href="/contact"
+            <div
+              className="font-medium cursor-pointer hover:text-[#CAA839] text-sm"
+              onClick={openModal}
             >
               Contact Us
-            </Link>
+            </div>
           </div>
         </div>
       </div>
