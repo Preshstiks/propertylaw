@@ -9,6 +9,7 @@ import {
 import { TbTrees, TbBuildingSkyscraper } from "react-icons/tb";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { useEffect, useState } from "react";
 
 const Services = () => {
   const OurServices = [
@@ -61,7 +62,23 @@ const Services = () => {
         "Our legal services can help you safeguard your future and uphold your rights. For your peace of mind and justice, our knowledgeable staff streamlines the law in many areas, including estate planning, employment, and civil disputes.",
     },
   ];
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    if (emblaApi) {
+      emblaApi.on("select", () => {
+        setActiveSlide(emblaApi.selectedScrollSnap());
+      });
+    }
+  }, [emblaApi]);
+
+  const handleDotClick = (index) => {
+    if (emblaApi) {
+      emblaApi.scrollTo(index);
+      setActiveSlide(index);
+    }
+  };
   return (
     <div id={"services"} className="md:py-[130px] sm:py-[100px] py-[70px]">
       <div className="text-center pb-[80px] px-[12%]">
@@ -99,6 +116,19 @@ const Services = () => {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+      <div className="text-center mt-4">
+        <div className="flex justify-center space-x-2">
+          {OurServices.map((_, index) => (
+            <button
+              key={index}
+              className={`w-3 h-3 rounded-full ${
+                activeSlide === index ? "bg-[#CAA839]" : "bg-gray-400"
+              }`}
+              onClick={() => handleDotClick(index)}
+            ></button>
+          ))}
         </div>
       </div>
     </div>
