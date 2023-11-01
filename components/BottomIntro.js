@@ -2,7 +2,7 @@ import { BottomIntroData } from "@/data/bottomIntroData";
 
 const BottomIntro = () => {
   return (
-    <div className="px-[12%] py-[100px] rounded-ee-[70px] rounded-se-[70px] bg-[#0A0A22] text-white">
+    <div className="px-[12%] py-[100px] mx-2 rounded-[70px] rounded-se-[70px] bg-[#0A0A22] text-white">
       <div className="flex items-center justify-between">
         <div className="w-[100%]">
           <div>
@@ -17,7 +17,7 @@ const BottomIntro = () => {
           </div>
         </div>
         <div className="w-[100%]">
-          <p className="text-gray-400 text-sm font-light">
+          <p className="text-gray-400 leading-6 text-sm font-light">
             When it comes to property law, the choice of your legal partner is
             paramount. Agbolagade Akande & Co. offers the ideal solution for all
             your property law needs. With our seasoned experts, unparalleled
@@ -36,7 +36,7 @@ const BottomIntro = () => {
               <h2 className="text-lg ">{items.title}</h2>
             </div>
             <div>
-              <p className="text-gray-400 text-sm font-light">
+              <p className="text-gray-400 leading-6 text-sm font-light">
                 {items.description}
               </p>
             </div>

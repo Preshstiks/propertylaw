@@ -130,7 +130,7 @@ const Services = () => {
                 </h2>
               </div>
               <div>
-                <p className="text-center text-gray-600 text-sm  font-light">
+                <p className="text-center leading-6 text-gray-600 text-sm  font-light">
                   {items.description}
                 </p>
               </div>

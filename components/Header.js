@@ -1,3 +1,4 @@
+import Image from "next/image";
 const Header = () => {
   return (
     <div className="pb-[50px]">
@@ -9,14 +10,15 @@ const Header = () => {
             <h1 className="pb-3">Driven. Effective.</h1>
           </div>
           <div>
-            <p className=" font-extralight leading-7">
+            <p className=" font-extralight w-[80%] leading-7">
               Your Trusted Partner in Property Law: Navigating Real Estate with
               Expertise and Excellence.
             </p>
           </div>
         </div>
         <div>
-          <img src="/lawyers.png" width={1000} alt="header-img" />
+          <Image src="/justice.png" width={370} height={370} alt="header-img" />
+          {/* <Image src="/statue.png" width={750} height={750} alt="header-img" /> */}
         </div>
       </div>
       <div className="flex gap-6">
