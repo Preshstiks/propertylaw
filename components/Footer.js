@@ -5,29 +5,49 @@ import {
   AiOutlineTwitter,
 } from "react-icons/ai";
 import Link from "next/link";
+import Image from "next/image";
+import { Link as ScrollLink } from "react-scroll";
 const Footer = () => {
+  const routes = [
+    {
+      link: "services",
+      text: "Services",
+    },
+    {
+      link: "about",
+      text: "About Us",
+    },
+  ];
   return (
     <div className="bg-[#0A0A22] py-[50px] md:px-[12%] px-[8%]">
-      <div className="flex items-center pb-[60px] justify-center text-white">
-        <div className="w-1/2">
+      <div className="md:flex block items-center pb-[60px] justify-center text-white">
+        <div className="md:w-1/2 w-full">
           <div className="flex pb-8 items-center">
             <div>
-              <img src="/law.png" width={70} alt="logo" />
+              <Image
+                src="/law.png"
+                className="sm:w-[70px] sm:h-[70px] h-[50px] w-[50px]"
+                width={70}
+                height={70}
+                alt="logo"
+              />
             </div>
             <div>
-              <h1 className="text-[18px] font-russo">Agbolagade Akande</h1>
-              <h2 className="font-russo text-[15px]"> & Co.</h2>
+              <h1 className="md:text-[18px] text-[15px] font-russo">
+                Agbolagade Akande
+              </h1>
+              <h2 className="font-russo md:text-[15px] text-[12px]"> & Co.</h2>
             </div>
           </div>
           <div>
-            <p className="text-gray-400 text-sm font-light leading-[30px] pr-[40%]">
+            <p className="text-gray-400 text-sm font-light leading-[30px] md:pr-[40%] pr-0">
               we pride ourselves on delivering personalized, efficient, and
               cost-effective legal services. Our dedication to your success and
               satisfaction is the driving force behind everything we do
             </p>
           </div>
         </div>
-        <div className="w-1/3">
+        <div className="md:w-1/3 w-full">
           <div>
             <div className="pb-2">
               <h2 className="text-[#CAA839] text-[15px] font-medium tracking-[4px]">
@@ -44,10 +64,21 @@ const Footer = () => {
               <p className="text-sm font-light leading-[30px]">Ikeja</p>
             </div>
           </div>
-          <div className="flex gap-7 pb-8 w-full">
-            <div>
+          <div className="flex gap-7 md:justify-start justify-center pb-8 w-full">
+            {routes.map((item) => (
+              <ScrollLink
+                to={item.link}
+                spy={true}
+                smooth={true}
+                offset={item.link === "link" ? -40 : 0}
+                className="font-medium p-0 m-0 cursor-pointer hover:text-[#CAA839] minimd:text-sm text-[12px]"
+              >
+                {item.text}
+              </ScrollLink>
+            ))}
+            {/* <div>
               <Link
-                className="font-medium hover:text-[#CAA839] text-sm"
+                className="font-medium hover:text-[#CAA839] md:text-sm text-[12px]"
                 href="#"
               >
                 Services
@@ -55,22 +86,20 @@ const Footer = () => {
             </div>
             <div>
               <Link
-                className="font-medium hover:text-[#CAA839] text-sm"
+                className="font-medium hover:text-[#CAA839] md:text-sm text-[12px]"
                 href="#"
               >
                 About Us
               </Link>
-            </div>
-            <div>
-              <Link
-                className="font-medium hover:text-[#CAA839] text-sm"
-                href="#"
-              >
-                Contact Us
-              </Link>
-            </div>
+            </div> */}
+            <Link
+              className="font-medium hover:text-[#CAA839] minimd:text-sm text-[12px]"
+              href="/contact"
+            >
+              Contact Us
+            </Link>
           </div>
-          <div className="flex items-center">
+          <div className="flex md:justify-start justify-center items-center">
             <div className="flex items-center gap-8">
               <div>
                 <AiFillFacebook className="text-[25px] hover:text-[#CAA839]" />
@@ -89,7 +118,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-center">
-        <p className="text-gray-400 text-sm font-extralight">
+        <p className="text-gray-400 xsm:text-sm text-xs font-extralight">
           &copy; 2023, Agbolagade Akande & Co.
         </p>
       </div>

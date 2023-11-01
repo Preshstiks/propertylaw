@@ -1,4 +1,3 @@
-import { MdLocationOn } from "react-icons/md";
 const ContactForm = () => {
   return (
     <div className=" py-[70px] border-b border-t border-[#CAA839]">

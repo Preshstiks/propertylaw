@@ -63,40 +63,42 @@ const Services = () => {
   ];
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
   return (
-    <div className="py-[130px] px-[12%]">
-      <div className="text-center pb-[80px]">
+    <div id={"services"} className="md:py-[130px] sm:py-[100px] py-[70px]">
+      <div className="text-center pb-[80px] px-[12%]">
         <span className="text-[#CAA839] text-[11px] tracking-[4px]">
           WE'VE GOT YOU COVERED
         </span>
         <h1 className="text-[35px]">Legal Services</h1>
         <div className="bg-[#CAA839] h-1 w-[50px] mx-auto rounded-full my-[20px]"></div>
       </div>
-      <div ref={emblaRef} className=" overflow-hidden">
-        <div className="flex">
-          {OurServices.map((items) => (
-            <div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="p-8 mx-[20px] flex-grow-0 flex-shrink-0 basis-[29.5%] rounded-lg shadow-md bg-white"
-            >
-              <div className="pb-2 flex items-center justify-center">
-                <div className="w-[80px] bg-[#0A0A22] h-[80px] rounded-lg flex items-center justify-center">
-                  <items.icon className="text-[40px] text-[#CAA839]" />
+      <div className=" px-[9%]">
+        <div ref={emblaRef} className="overflow-hidden">
+          <div className="flex">
+            {OurServices.map((items) => (
+              <div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="p-8 mx-[20px] flex-grow-0 flex-shrink-0 xmd:basis-[29.5%] sm:basis-[60%] basis-[60%] rounded-lg shadow-md bg-white"
+              >
+                <div className="pb-2 flex items-center justify-center">
+                  <div className="w-[80px] bg-[#0A0A22] h-[80px] rounded-lg flex items-center justify-center">
+                    <items.icon className="text-[40px] text-[#CAA839]" />
+                  </div>
+                </div>
+                <div className="py-4">
+                  <h2 className="text-[#0A0A22] text-center text-[22px] font-medium">
+                    {items.title}
+                  </h2>
+                </div>
+                <div>
+                  <p className="text-center leading-6 text-gray-600 text-sm  font-light">
+                    {items.description}
+                  </p>
                 </div>
               </div>
-              <div className="py-4">
-                <h2 className="text-[#0A0A22] text-center text-[22px] font-medium">
-                  {items.title}
-                </h2>
-              </div>
-              <div>
-                <p className="text-center leading-6 text-gray-600 text-sm  font-light">
-                  {items.description}
-                </p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
