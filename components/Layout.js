@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
     }, 4000);
   });
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full relative">
       {isLoading ? (
         <div className="bg-[#0A0A22] h-[100vh] flex items-center justify-center w-full">
           <BounceLoader color="#CAA839" speedMultiplier={1} />

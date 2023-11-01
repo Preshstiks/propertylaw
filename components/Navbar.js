@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import { HiMenuAlt3 } from "react-icons/hi";
+import { AiOutlineClose } from "react-icons/ai";
+// import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 const Navbar = () => {
   const routes = [
     {
@@ -13,6 +16,7 @@ const Navbar = () => {
       text: "About Us",
     },
   ];
+  const [show, setShow] = useState(false);
   return (
     <div className="px-[12%] py-[20px] bg-[#0A0A22] text-white">
       <div className="flex justify-between items-center">
@@ -34,8 +38,17 @@ const Navbar = () => {
           </div>
         </Link>
         <div>
-          <HiMenuAlt3 className="text-[25px] md:hidden block" />
+          <HiMenuAlt3
+            onClick={() => setShow(true)}
+            className="text-[25px] md:hidden block"
+          />
         </div>
+        {show && (
+          <div className="bg-[#0A0A22] absolute top-0 left-0 md:hidden h-screen w-full ">
+            <AiOutlineClose className=" text-white text-[30px] absolute top-7 right-7" />
+          </div>
+        )}
+
         <div className="md:flex gap-7 hidden">
           {routes.map((item) => (
             <ScrollLink
