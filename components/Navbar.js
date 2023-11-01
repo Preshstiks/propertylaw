@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
-// import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 const Navbar = () => {
   const routes = [
@@ -43,12 +43,44 @@ const Navbar = () => {
             className="text-[25px] md:hidden block"
           />
         </div>
-        {show && (
-          <div className="bg-[#0A0A22] absolute top-0 left-0 md:hidden h-screen w-full ">
-            <AiOutlineClose className=" text-white text-[30px] absolute top-7 right-7" />
-          </div>
-        )}
-
+        <AnimatePresence>
+          {show && (
+            <motion.div
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -100, opacity: 0 }}
+              className="bg-[#0A0A22] text-center absolute top-0 left-0 md:hidden h-[50vh] w-full "
+            >
+              {routes.map((item) => (
+                <div className="my-[50px]">
+                  <ScrollLink
+                    to={item.link}
+                    spy={true}
+                    smooth={true}
+                    offset={item.link === "link" ? -40 : 0}
+                    onClick={() => setShow(false)}
+                    className="cursor-pointer font-medium text-sm hover:text-[#CAA839]"
+                  >
+                    {item.text}
+                  </ScrollLink>
+                </div>
+              ))}
+              <div>
+                <Link
+                  onClick={() => setShow(false)}
+                  className="font-medium hover:text-[#CAA839] text-sm"
+                  href="/contact"
+                >
+                  Contact Us
+                </Link>
+              </div>
+              <AiOutlineClose
+                onClick={() => setShow(false)}
+                className=" text-white text-[25px] absolute top-10 right-10"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
         <div className="md:flex gap-7 hidden">
           {routes.map((item) => (
             <ScrollLink
@@ -61,6 +93,7 @@ const Navbar = () => {
               {item.text}
             </ScrollLink>
           ))}
+
           <div>
             <Link
               className="font-medium hover:text-[#CAA839] text-sm"
