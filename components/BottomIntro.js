@@ -2,7 +2,7 @@ import { BottomIntroData } from "@/data/bottomIntroData";
 
 const BottomIntro = () => {
   return (
-    <div className="px-[12%] py-[100px] rounded-ee-[70px] rounded-se-[70px] bg-[#000033] text-white">
+    <div className="px-[12%] py-[100px] rounded-ee-[70px] rounded-se-[70px] bg-[#0A0A22] text-white">
       <div className="flex items-center justify-between">
         <div className="w-[100%]">
           <div>

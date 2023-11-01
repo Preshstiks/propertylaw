@@ -12,26 +12,24 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 7000);
+    }, 4000);
   });
   return (
     <div className="h-full w-full">
       {isLoading ? (
-        <div className="bg-[#000033] h-[100vh] flex items-center justify-center w-full">
+        <div className="bg-[#0A0A22] h-[100vh] flex items-center justify-center w-full">
           <BounceLoader color="#CAA839" speedMultiplier={1} />
         </div>
       ) : (
         <div>
           <div className="bg-[#0A0A22] py-12 rounded-bl-[70px] text-white font-montserrat">
             <div className="px-[12%]">
-              <Navbar />
               <Header />
             </div>
           </div>
           <Services />
           <BottomIntro />
           <Teams />
-          <Footer />
         </div>
       )}
     </div>

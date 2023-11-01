@@ -7,7 +7,7 @@ import {
 import Link from "next/link";
 const Footer = () => {
   return (
-    <div className="bg-[#000033] py-[50px] md:px-[12%] px-[8%]">
+    <div className="bg-[#0A0A22] py-[50px] md:px-[12%] px-[8%]">
       <div className="flex items-center pb-[60px] justify-center text-white">
         <div className="w-1/2">
           <div className="flex pb-8 items-center">
@@ -50,7 +50,7 @@ const Footer = () => {
                 className="font-medium hover:text-[#CAA839] text-sm"
                 href="#"
               >
-                About Us
+                Services
               </Link>
             </div>
             <div>
@@ -58,7 +58,7 @@ const Footer = () => {
                 className="font-medium hover:text-[#CAA839] text-sm"
                 href="#"
               >
-                Services
+                About Us
               </Link>
             </div>
             <div>

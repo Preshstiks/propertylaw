@@ -4,7 +4,7 @@ const Teams = () => {
   return (
     <div className="pt-[100px]">
       <div>
-        <div className="text-center text-[#000033]">
+        <div className="text-center text-[#0A0A22]">
           <h2 className="uppercase text-[27px] tracking-[3px]">Expert Teams</h2>
           <div className="bg-[#CAA839] h-1 w-[50px] mx-auto rounded-full mb-[40px] mt-[20px]"></div>
         </div>
@@ -41,7 +41,7 @@ const Teams = () => {
               />
 
               <div className="py-3">
-                <h2 className="font-medium text-center tracking-[3px] text-[#000033]">
+                <h2 className="font-medium text-center tracking-[3px] text-[#0A0A22]">
                   OWEN L ANDERSON
                 </h2>
               </div>
@@ -64,7 +64,7 @@ const Teams = () => {
               height={2000}
             />
             <div className="text-center py-3">
-              <h2 className="font-medium tracking-[3px] text-[#000033]">
+              <h2 className="font-medium tracking-[3px] text-[#0A0A22]">
                 PATRICIA I HANSEN
               </h2>
             </div>

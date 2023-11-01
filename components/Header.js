@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <div className="py-[50px]">
+    <div className="pb-[50px]">
       <div className="flex justify-center space-x-[40px] items-center">
         <div>
           <img src="" />
@@ -20,7 +20,7 @@ const Header = () => {
         </div>
       </div>
       <div className="flex gap-6">
-        <button className="py-4 px-5 text-[#000033] rounded-lg text-sm font-bold bg-[#CAA839]">
+        <button className="py-4 px-5 text-[#0A0A22] rounded-lg text-sm font-bold bg-[#CAA839]">
           Consultation
         </button>
         <button className="py-4 px-5 bg-[#22224b] rounded-lg text-sm font-bold text-[#CAA839]">
