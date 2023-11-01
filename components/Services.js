@@ -7,10 +7,9 @@ import {
   MdRealEstateAgent,
 } from "react-icons/md";
 import { TbTrees, TbBuildingSkyscraper } from "react-icons/tb";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+
 const Services = () => {
   const OurServices = [
     {
@@ -62,24 +61,7 @@ const Services = () => {
         "Our legal services can help you safeguard your future and uphold your rights. For your peace of mind and justice, our knowledgeable staff streamlines the law in many areas, including estate planning, employment, and civil disputes.",
     },
   ];
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
   return (
     <div className="py-[130px] px-[12%]">
       <div className="text-center pb-[80px]">
@@ -89,35 +71,14 @@ const Services = () => {
         <h1 className="text-[35px]">Legal Services</h1>
         <div className="bg-[#CAA839] h-1 w-[50px] mx-auto rounded-full my-[20px]"></div>
       </div>
-      <div>
-        <Carousel
-          additionalTransfrom={0}
-          responsive={responsive}
-          draggable={false}
-          autoPlay={"mobile"}
-          autoPlaySpeed={4000}
-          keyBoardControl={true}
-          customTransition="all .5"
-          transitionDuration={500}
-          centerMode={false}
-          className=""
-          containerClass="container-with-dots"
-          focusOnSelect={false}
-          infinite
-          itemClass=""
-          minimumTouchDrag={80}
-          pauseOnHover
-          rewind={false}
-          rewindWithAnimation={false}
-          rtl={false}
-          swipeable
-        >
+      <div ref={emblaRef} className=" overflow-hidden">
+        <div className="flex">
           {OurServices.map((items) => (
             <div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="p-8 mx-[20px] rounded-lg shadow-md bg-white"
+              className="p-8 mx-[20px] flex-grow-0 flex-shrink-0 basis-[29.5%] rounded-lg shadow-md bg-white"
             >
               <div className="pb-2 flex items-center justify-center">
                 <div className="w-[80px] bg-[#0A0A22] h-[80px] rounded-lg flex items-center justify-center">
@@ -136,7 +97,7 @@ const Services = () => {
               </div>
             </div>
           ))}
-        </Carousel>
+        </div>
       </div>
     </div>
   );
