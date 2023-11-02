@@ -16,9 +16,11 @@ export default function Home() {
     }, 4000);
   });
   const openModal = () => {
+    document.body.classList.add("modal-open");
     setIsOpenModal(true);
   };
   const closeModal = () => {
+    document.body.classList.remove("modal-open");
     setIsOpenModal(false);
   };
   return (
@@ -28,7 +30,9 @@ export default function Home() {
           <BounceLoader color="#CAA839" speedMultiplier={1} />
         </div>
       ) : (
-        <div className="relative">
+        <div
+          className={isOpenModal ? "relative overflow-y-hidden" : "relative"}
+        >
           <Navbar openModal={openModal} />
           <div className="bg-[#0A0A22] py-12 rounded-bl-[70px] text-white font-montserrat">
             <div className="px-[12%]">
@@ -38,7 +42,7 @@ export default function Home() {
           <Services />
           <BottomIntro />
           <Teams />
-          <Footer />
+          <Footer openModal={openModal} />
           <div className="h-full w-full">
             {isOpenModal && <ContactForm closeModal={closeModal} />}
           </div>

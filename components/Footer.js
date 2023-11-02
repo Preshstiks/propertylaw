@@ -7,7 +7,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { Link as ScrollLink } from "react-scroll";
-const Footer = () => {
+const Footer = ({ openModal }) => {
   const routes = [
     {
       link: "services",
@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <div className="bg-[#0A0A22] py-[50px] md:px-[12%] px-[8%]">
       <div className="md:flex block items-center pb-[60px] justify-center text-white">
-        <div className="md:w-1/2 w-full">
+        <div className="md:w-1/2 md:pb-0 pb-5 w-full">
           <div className="flex pb-8 items-center">
             <div>
               <Image
@@ -76,28 +76,12 @@ const Footer = () => {
                 {item.text}
               </ScrollLink>
             ))}
-            {/* <div>
-              <Link
-                className="font-medium hover:text-[#CAA839] md:text-sm text-[12px]"
-                href="#"
-              >
-                Services
-              </Link>
-            </div>
-            <div>
-              <Link
-                className="font-medium hover:text-[#CAA839] md:text-sm text-[12px]"
-                href="#"
-              >
-                About Us
-              </Link>
-            </div> */}
-            <Link
-              className="font-medium hover:text-[#CAA839] minimd:text-sm text-[12px]"
-              href="/contact"
+            <div
+              className="font-medium hover:text-[#CAA839] cursor-pointer minimd:text-sm text-[12px]"
+              onClick={openModal}
             >
               Contact Us
-            </Link>
+            </div>
           </div>
           <div className="flex md:justify-start justify-center items-center">
             <div className="flex items-center gap-8">

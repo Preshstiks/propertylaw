@@ -43,7 +43,10 @@ const Navbar = ({ openModal }) => {
       className="px-[12%] py-[20px] sticky top-0 z-50 bg-[#0A0A22] text-white"
     >
       <div className="flex justify-between items-center">
-        <Link href="/" className="flex items-center">
+        <div
+          className="flex items-center cursor-pointer"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
           <div>
             <Image
               src="/law.png"
@@ -59,7 +62,7 @@ const Navbar = ({ openModal }) => {
             </h1>
             <h2 className="font-russo md:text-[15px] text-[12px]"> & Co.</h2>
           </div>
-        </Link>
+        </div>
         <div>
           <HiMenuAlt3
             onClick={() => setShow(true)}
@@ -72,6 +75,7 @@ const Navbar = ({ openModal }) => {
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -100, opacity: 0 }}
+              transition={{ duration: 0.5 }}
               className="bg-[#0A0A22] text-center absolute top-0 left-0 md:hidden h-[50vh] w-full "
             >
               {routes.map((item) => (
@@ -103,7 +107,7 @@ const Navbar = ({ openModal }) => {
             </motion.div>
           )}
         </AnimatePresence>
-        <div className="md:flex gap-7 hidden">
+        <div className="md:flex gap-7 items-center hidden">
           {routes.map((item) => (
             <ScrollLink
               to={item.link}
