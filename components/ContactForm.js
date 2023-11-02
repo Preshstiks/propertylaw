@@ -11,7 +11,7 @@ const ContactForm = ({ closeModal }) => {
         transition={{ duration: 0.5 }}
         className="bg-black bg-opacity-[0.5] w-screen h-screen fixed top-0 left-0 z-[9999] font-russo"
       >
-        <div className="bg-white fixed top-0 bottom-0 left-0 right-0 px-[12%] rounded-[25px]">
+        <div className="bg-white pt-[10px] fixed top-0 bottom-0 left-0 right-0 px-[12%] rounded-[25px]">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <div>
@@ -40,7 +40,7 @@ const ContactForm = ({ closeModal }) => {
               </button>
             </div>
           </div>
-          <div className="py-[20px]">
+          <div className="py-[15px]">
             <h2 className="text-[30px] text-[#0A0A22] uppercase font-bold">
               Contact Us
             </h2>
