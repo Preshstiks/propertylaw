@@ -4,7 +4,7 @@ const BottomIntro = () => {
   return (
     <div
       id={"about"}
-      className="px-[12%] sm:py-[100px] py-[80px] mr-[25px] rounded-ee-[70px] rounded-se-[70px] bg-[#0A0A22] text-white"
+      className="px-[12%] sm:py-[100px] py-[80px] md:mr-[25px] sm:mr-[15px] mr-0 rounded-ee-[70px] rounded-se-[70px] bg-[#0A0A22] text-white"
     >
       <div className="md:flex block items-center justify-between">
         <div className="w-[100%]">
