@@ -17,22 +17,16 @@ const Navbar = ({ openModal }) => {
     },
   ];
   const [show, setShow] = useState(false);
-  const navbarRef = useRef(null); // Create a ref for the Navbar container
-
-  // Add event listener to handle clicks outside the Navbar
+  const navbarRef = useRef(null);
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navbarRef.current && !navbarRef.current.contains(event.target)) {
         setShow(false);
       }
     };
-
-    // Attach the event listener when the component mounts
     if (show) {
       window.addEventListener("click", handleClickOutside);
     }
-
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("click", handleClickOutside);
     };
@@ -58,7 +52,7 @@ const Navbar = ({ openModal }) => {
           </div>
           <div>
             <h1 className="md:text-[18px] text-[15px] font-russo">
-              Agbolagade Akande
+              Emmanuel Akande
             </h1>
             <h2 className="font-russo md:text-[15px] text-[12px]"> & Co.</h2>
           </div>

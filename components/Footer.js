@@ -34,7 +34,7 @@ const Footer = ({ openModal }) => {
             </div>
             <div>
               <h1 className="md:text-[18px] text-[15px] font-russo">
-                Agbolagade Akande
+                Emmanuel Akande
               </h1>
               <h2 className="font-russo md:text-[15px] text-[12px]"> & Co.</h2>
             </div>
@@ -103,7 +103,7 @@ const Footer = ({ openModal }) => {
       </div>
       <div className="text-center">
         <p className="text-gray-400 xsm:text-sm text-xs font-extralight">
-          &copy; 2023, Agbolagade Akande & Co.
+          &copy; 2023, Emmanuel Akande & Co.
         </p>
       </div>
     </div>

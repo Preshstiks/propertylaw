@@ -25,7 +25,7 @@ const ContactForm = ({ closeModal }) => {
               </div>
               <div>
                 <h1 className="md:text-[18px] text-[#0A0A22] text-[15px]">
-                  Agbolagade Akande
+                  Emmanuel Akande
                 </h1>
                 <h2 className="md:text-[15px] text-[12px]"> & Co.</h2>
               </div>

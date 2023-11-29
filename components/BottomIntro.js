@@ -22,7 +22,7 @@ const BottomIntro = () => {
         <div className="w-[100%]">
           <p className="text-gray-400 text-sm leading-6 font-light">
             When it comes to property law, the choice of your legal partner is
-            paramount. Agbolagade Akande & Co. offers the ideal solution for all
+            paramount. Emmanuel Akande & Co. offers the ideal solution for all
             your property law needs. With our seasoned experts, unparalleled
             expertise, and a proven track record, we provide the assurance of
             navigating the complexities of property law successfully.
